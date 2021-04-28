@@ -32,7 +32,8 @@ fg = folium.FeatureGroup(name = "My Map")
 #for-loop to add multiple points on map from volcanoes.txt file 
 for lt, ln, el, name in zip(lat, lon, elev, name):
     iframe = folium.IFrame(html = html % (name, name, el), width = 200, height = 100)
-    fg.add_child(folium.Marker(location = [lt, ln], popup = folium.Popup(iframe), icon = folium.Icon(color = color_el(el))))
+    fg.add_child(folium.CircleMarker(location = [lt, ln], popup = folium.Popup(iframe), fill = True, fill_color = color_el(el), fill_opacity = 0.8))
+
 
 
 
